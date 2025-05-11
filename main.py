@@ -6,6 +6,16 @@ import requests
 from bs4 import BeautifulSoup
 from datetime import datetime as dt
 
+def banner_small_negative_filled():
+    os.system('clear')
+    print(f'''
+▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
+█▄▄░▄▄█░▄▄▀█░▄▄▀█░██░▄▄██░▄▄▄░█▀▄▄▀█▀▄▄▀█▀▄▄▀█░▄▄▀
+███░███░▀▀░█░▄▄▀█░██░▄▄██▄▄▄▀▀█░▀▀░█░██░█░██░█░██░
+███░███▄██▄█▄▄▄▄█▄▄█▄▄▄██░▀▀▀░█░█████▄▄███▄▄██▄██▄
+▀▀▀▀▀▀▀▀▀▀▀▀▀{time_now()} github.com/bluurw
+    ''')
+
 def time_now():
     return dt.now().strftime('%d/%m/%Y %H:%M:%S')
 
@@ -82,6 +92,7 @@ async def engine(url, user, passw=None, wordlist=None, verbose=False):
 
 async def main():
     parser = argparse.ArgumentParser()
+    banner_small_negative_filled()
     parser.add_argument('--url', type=str, required=True)
     parser.add_argument('--user', type=str)
     parser.add_argument('--passw', type=str)
